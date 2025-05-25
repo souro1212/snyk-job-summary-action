@@ -29,13 +29,13 @@ runs:
       shell: bash
 
     - name: 'Upload Artifact'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: snyk-details
         path: |
           snyk_dependencies.html
           snyk_code.html
-        retention-days: 7
+        retention-days: 60
         if-no-files-found: ignore
 
     - run: pip install mdutils
